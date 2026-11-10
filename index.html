@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Braga Vitareli</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            color: white;
+            background: radial-gradient(circle at top right, #3a1a05, #000 70%) fixed;
+        }
+
+        .menu {
+            position: fixed;
+            z-index: 100;
+            /* mantém o menu sempre por cima */
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 4px;
+            padding: 5px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .menu a {
+            position: relative;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 8px 16px;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover,
+        .menu a.active {
+            color: white;
+        }
+
+        .destaque {
+            position: absolute;
+            top: 5px;
+            bottom: 5px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.14);
+            transition: left 0.4s ease, width 0.4s ease;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        /* Seção Início */
+        .hero {
+            justify-content: flex-start;
+            padding: 0 8vw;
+            font-size: 16px;
+        }
+
+        .hero-texto {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            margin: 0 0 24px;
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        .hero h1 em {
+            font-family: Georgia, serif;
+            color: #ff6a1a;
+        }
+
+        .hero p {
+            margin: 0 0 32px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 16px 28px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .botao:hover {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        /* Tech Stack */
+        .stack {
+            flex-direction: column;
+            padding: 100px 20px 60px;
+        }
+
+        .stack h2 {
+            margin: 0 0 48px;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .linha {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .tech {
+            width: 82px;
+            height: 96px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.25s, border-color 0.25s, background 0.25s, color 0.25s;
+        }
+
+        .tech img {
+            width: 36px;
+            height: 36px;
+            filter: brightness(0) invert(1);
+            /* ícone todo branco */
+            opacity: 0.55;
+            transition: opacity 0.25s;
+        }
+
+        .tech:hover {
+            transform: scale(1.15);
+            color: white;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 106, 26, 0.7);
+        }
+
+        /* No hover o ícone volta pra cor original */
+        .tech:hover img {
+            filter: none;
+            opacity: 1;
+        }
+
+        /* Ícones escuros demais: continuam brancos no hover */
+        .tech:hover img.branco {
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="menu">
+        <span class="destaque"></span>
+        <a href="#inicio" class="active">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="hero-texto">
+            <h1>
+                Transformo ideias ambiciosas em
+                <em>produtos digitais de alta performance</em>
+            </h1>
+            <p>Olá, eu sou o Gabriel Braga Vitareli, um Desenvolvedor Fullstack</p>
+            <a href="#contato" class="botao">Entre em Contato</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="stack">
+        <h2>Tech Stack</h2>
+
+        <!-- Para adicionar uma tecnologia, copie um bloco "tech" e troque o nome e o ícone -->
+        <!-- Ícones: https://devicon.dev -->
+
+        <div class="linha">
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="">Python</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="">PHP</div>
+            
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" alt="">Lua</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="">C</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">HTML</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"alt="">CSS</div>
+
+            <div class="tech"><img class="branco"src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="">Bash</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="">PostgreSQL</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"alt="">MongoDB</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="">Git</div>
+
+            <div class="tech"><img class="branco" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="">GitHub</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="">Linux</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="">VS Code</div>
+
+            <div class="tech"><img class="branco" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" alt="">Markdown</div>
+
+            <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="">Postman</div>
+
+            <div class="tech"><img src="https://cdn.simpleicons.org/robloxstudio" alt="">Roblox Studio</div>
+
+
+    </section>
+
+    <section id="projetos">Projetos</section>
+    <section id="contato">Contato</section>
+
+    <script>
+        const links = document.querySelectorAll('.menu a');
+        const destaque = document.querySelector('.destaque');
+
+        function mover(link) {
+            destaque.style.left = link.offsetLeft + 'px';
+            destaque.style.width = link.offsetWidth + 'px';
+            links.forEach(l => l.classList.toggle('active', l === link));
+        }
+
+        const observador = new IntersectionObserver(entradas => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    mover(document.querySelector('.menu a[href="#' + entrada.target.id + '"]'));
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+
+        document.querySelectorAll('section').forEach(s => observador.observe(s));
+
+        window.addEventListener('load', () => mover(links[0]));
+        window.addEventListener('resize', () => mover(document.querySelector('.menu a.active')));
+    </script>
+
+</body>
+
+</html>
